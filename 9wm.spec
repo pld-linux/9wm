@@ -2,15 +2,17 @@ Summary:	An X window manager resembling the Plan 9 (8-1/2) interface
 Summary(pl):	Zarz±dca okien emuluj±cy interfejs Plan 9 (8-1/2)
 Name:		9wm
 Version:	1.2
-Release:	2
+Release:	3
 License:	distributable
 Group:		X11/Window Managers
-Source0:	ftp://ftp.cs.su.oz.au/dhog/9wm/pre-%{name}-%{version}.shar.gz
+Source0:	http://www.plig.org/xwinman/archive/9wm/pre-%{name}-%{version}.shar.gz
+Source1:	%{name}.desktop
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:	XFree86-devel
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
+%define		_wmpropsdir	%{_datadir}/wm-properties
 
 %description
 9wm emulates the Plan 9 window manager 8-1/2. 9wm is designed to be
@@ -32,7 +34,9 @@ xmkmf -a
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_wmpropsdir}
 %{__make} install install.man DESTDIR=$RPM_BUILD_ROOT
+install %{SOURCE1} $RPM_BUILD_ROOT%{_wmpropsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -42,3 +46,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %attr(755,root,root) %{_bindir}/9wm
 %{_mandir}/*/*
+%{_wmpropsdir}/*
