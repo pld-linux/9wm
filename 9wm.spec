@@ -2,7 +2,7 @@ Summary:	An X window manager resembling the Plan 9 (8-1/2) interface
 Summary(pl):	Zarz±dca okien emuluj±cy interfejs Pan 9 (8-1/2)
 Name:		9wm
 Version:	1.2
-Release:	1
+Release:	2
 License:	distributable 
 Group:		X11/Window Managers
 Group(de):	X11/Fenstermanager
@@ -45,6 +45,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.gz
+%doc *.gz
 %attr(755,root,root) %{_bindir}/9wm
 %{_mandir}/*/*
