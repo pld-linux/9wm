@@ -2,7 +2,7 @@ Summary:	An X window manager resembling the Plan 9 (8-1/2) interface
 Summary(pl):	Zarz±dca okien emuluj±cy interfejs Plan 9 (8-1/2)
 Name:		9wm
 Version:	1.2
-Release:	3
+Release:	4
 License:	distributable
 Group:		X11/Window Managers
 Source0:	http://www.plig.org/xwinman/archive/9wm/pre-%{name}-%{version}.shar.gz
@@ -12,8 +12,6 @@ Source2:	%{name}-xsession.desktop
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:	XFree86-devel
 
-%define   	_prefix		/usr/X11R6
-%define   	_mandir		/usr/X11R6/man
 %define		_wmpropsdir	/usr/share/wm-properties
 %define		_xsessdir	/usr/share/xsessions
 
@@ -39,8 +37,11 @@ xmkmf -a
 rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT{%{_wmpropsdir},%{_xsessdir}}
+install -d $RPM_BUILD_ROOT%{_bindir}
+install -d $RPM_BUILD_ROOT%{_mandir}/man1/
 
-%{__make} install install.man DESTDIR=$RPM_BUILD_ROOT
+install 9wm $RPM_BUILD_ROOT%{_bindir}
+install 9wm.man $RPM_BUILD_ROOT%{_mandir}/man1/9wm.1x
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_wmpropsdir}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_xsessdir}/%{name}.desktop
