@@ -5,10 +5,6 @@ Version:	1.2
 Release:	2
 License:	distributable 
 Group:		X11/Window Managers
-Group(de):	X11/Fenstermanager
-Group(es):	X11/Administraadores De Ventanas
-Group(fr):	X11/Gestionnaires De Fenêtres
-Group(pl):	X11/Zarz±dcy Okien
 Source0:	ftp://ftp.cs.su.oz.au/dhog/9wm/pre-%{name}-%{version}.shar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:	XFree86-devel
