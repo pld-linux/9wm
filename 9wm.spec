@@ -14,8 +14,9 @@ BuildRequires:	XFree86-devel
 %define _mandir %{_prefix}/man
 
 %description
-9wm emulates the Plan 9 window manager 8-1/2.  9wm is designed to be small
-and fast.  The interface is easy to use, icon-less and click-to-type.
+9wm emulates the Plan 9 window manager 8-1/2. 9wm is designed to be
+small and fast. The interface is easy to use, icon-less and
+click-to-type.
 
 %description -l pl
 9wm emuluje zarz±dcê okien 8-1/2 z Plan 9. 9wm zosta³ zaprojektowany
@@ -33,9 +34,9 @@ make CDEBUGFLAGS="$RPM_OPT_FLAGS"
 %install
 rm -rf $RPM_BUILD_ROOT
 make install install.man DESTDIR=$RPM_BUILD_ROOT
-strip $RPM_BUILD_ROOT%{_prefix}/bin/9wm
+strip $RPM_BUILD_ROOT%{_bindir}/9wm
 
-gzip README $RPM_BUILD_ROOT/%{_mandir}/man1/*
+gzip -9nf README $RPM_BUILD_ROOT/%{_mandir}/man1/*
 
 %clean 
 rm -rf $RPM_BUILD_ROOT
