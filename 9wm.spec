@@ -10,7 +10,7 @@ Source1:	%{name}.desktop
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:	XFree86-devel
 
-%define		_wmpropsdir	%{_datadir}/wm-properties
+%define		_wmpropsdir	/usr/share/wm-properties
 
 %description
 9wm emulates the Plan 9 window manager 8-1/2. 9wm is designed to be
