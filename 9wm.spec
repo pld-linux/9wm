@@ -3,7 +3,7 @@ Summary(pl):	Zarz±dca okien emuluj±cy interfejs Pan 9 (8-1/2)
 Name:		9wm
 Version:	1.2
 Release:	1
-Copyright:	Distributable 
+License:	distributable 
 Group:		X11/Window Managers
 Group(de):	X11/Fenstermanager
 Group(es):	X11/Administraadores De Ventanas
