@@ -1,5 +1,5 @@
 Summary:	An X window manager resembling the Plan 9 (8-1/2) interface
-Summary(pl):	Zarz±dca okien emuluj±cy interfejs Pan 9 (8-1/2)
+Summary(pl):	Zarz±dca okien emuluj±cy interfejs Plan 9 (8-1/2)
 Name:		9wm
 Version:	1.2
 Release:	2
