@@ -9,8 +9,8 @@ Source0:	http://www.plig.org/xwinman/archive/9wm/pre-%{name}-%{version}.shar.gz
 # Source0-md5:	2785a33d4f42ecc19234029db03d7e00
 Source1:	%{name}.desktop
 Source2:	%{name}-xsession.desktop
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:	XFree86-devel
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_wmpropsdir	/usr/share/wm-properties
 %define		_xsessdir	/usr/share/xsessions
@@ -31,7 +31,8 @@ zcat %{SOURCE0} | sh
 
 %build
 xmkmf -a
-%{__make} CDEBUGFLAGS="%{rpmcflags}"
+%{__make} \
+	CDEBUGFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
