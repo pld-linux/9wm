@@ -10,6 +10,8 @@ Source1:	%{name}.desktop
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:	XFree86-devel
 
+%define   _prefix /usr/X11R6
+%define   _mandir /usr/X11R6/man
 %define		_wmpropsdir	/usr/share/wm-properties
 
 %description
