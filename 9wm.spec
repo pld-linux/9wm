@@ -3,7 +3,7 @@ Summary(pl):	Zarz±dca okien emuluj±cy interfejs Pan 9 (8-1/2)
 Name:		9wm
 Version:	1.2
 Release:	2
-License:	distributable 
+License:	distributable
 Group:		X11/Window Managers
 Source0:	ftp://ftp.cs.su.oz.au/dhog/9wm/pre-%{name}-%{version}.shar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -36,7 +36,7 @@ rm -rf $RPM_BUILD_ROOT
 
 gzip -9nf README
 
-%clean 
+%clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
