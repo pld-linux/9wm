@@ -15,6 +15,7 @@ BuildRequires:	XFree86-devel
 %define   	_prefix		/usr/X11R6
 %define   	_mandir		/usr/X11R6/man
 %define		_wmpropsdir	/usr/share/wm-properties
+%define		_xsessdir	/usr/share/xsessions
 
 %description
 9wm emulates the Plan 9 window manager 8-1/2. 9wm is designed to be
@@ -37,12 +38,12 @@ xmkmf -a
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT{%{_datadir}/xsessions,%{_wmpropsdir}}
+install -d $RPM_BUILD_ROOT{%{_wmpropsdir},%{_xsessdir}}
 
 %{__make} install install.man DESTDIR=$RPM_BUILD_ROOT
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_wmpropsdir}
-install %{SOURCE2} $RPM_BUILD_ROOT%{_datadir}/xsessions/%{name}.desktop
+install %{SOURCE2} $RPM_BUILD_ROOT%{_xsessdir}/%{name}.desktop
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -52,5 +53,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %attr(755,root,root) %{_bindir}/9wm
 %{_mandir}/*/*
-%{_datadir}/xsessions/%{name}.desktop
 %{_wmpropsdir}/*
+%{_xsessdir}/%{name}.desktop
