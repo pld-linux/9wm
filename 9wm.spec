@@ -6,6 +6,7 @@ Release:	3
 License:	distributable
 Group:		X11/Window Managers
 Source0:	http://www.plig.org/xwinman/archive/9wm/pre-%{name}-%{version}.shar.gz
+# Source0-md5:	2785a33d4f42ecc19234029db03d7e00
 Source1:	%{name}.desktop
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:	XFree86-devel
