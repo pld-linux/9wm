@@ -29,11 +29,11 @@ zcat %{SOURCE0} | sh
 
 %build
 xmkmf -a
-make CDEBUGFLAGS="$RPM_OPT_FLAGS"
+%{__make} CDEBUGFLAGS="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install install.man DESTDIR=$RPM_BUILD_ROOT
+%{__make} install install.man DESTDIR=$RPM_BUILD_ROOT
 strip $RPM_BUILD_ROOT%{_bindir}/9wm
 
 gzip -9nf README $RPM_BUILD_ROOT/%{_mandir}/man1/*
