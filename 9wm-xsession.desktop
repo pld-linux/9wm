@@ -6,3 +6,4 @@ TryExec=9wm
 Name=9WM
 Comment=An X window manager resembling the Plan 9 (8-1/2) interface
 Comment[pl]=Zarządca okien emulujący interfejs Plan 9 (8-1/2)
+# vi: encoding=utf-8
