@@ -7,7 +7,7 @@ Copyright:	Distributable
 Group:		X11/Window Managers
 Group(pl):	X11/Zarz±dcy Okien
 Source0:	ftp://ftp.cs.su.oz.au/dhog/9wm/pre-%{name}-%{version}.shar.gz
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:	XFree86-devel
 
 %define _prefix /usr/X11R6
