@@ -8,11 +8,12 @@ Group:		X11/Window Managers
 Source0:	http://www.plig.org/xwinman/archive/9wm/pre-%{name}-%{version}.shar.gz
 # Source0-md5:	2785a33d4f42ecc19234029db03d7e00
 Source1:	%{name}.desktop
+Source2:	%{name}-xsession.desktop
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:	XFree86-devel
 
-%define   _prefix /usr/X11R6
-%define   _mandir /usr/X11R6/man
+%define   	_prefix		/usr/X11R6
+%define   	_mandir		/usr/X11R6/man
 %define		_wmpropsdir	/usr/share/wm-properties
 
 %description
@@ -35,9 +36,13 @@ xmkmf -a
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_wmpropsdir}
+
+install -d $RPM_BUILD_ROOT{%{_datadir}/xsessions,%{_wmpropsdir}}
+
 %{__make} install install.man DESTDIR=$RPM_BUILD_ROOT
+
 install %{SOURCE1} $RPM_BUILD_ROOT%{_wmpropsdir}
+install %{SOURCE2} $RPM_BUILD_ROOT%{_datadir}/xsessions/%{name}.desktop
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -47,4 +52,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %attr(755,root,root) %{_bindir}/9wm
 %{_mandir}/*/*
+%{_datadir}/xsessions/%{name}.desktop
 %{_wmpropsdir}/*
