@@ -1,10 +1,11 @@
-Summary:	An X window manager resembling the Plan 9 (8-1/2) interface.
-Summary(pl):	Zarz±dca okien emuluj±cy interfejs Pan 9 (8-1/2).
+Summary:	An X window manager resembling the Plan 9 (8-1/2) interface
+Summary(pl):	Zarz±dca okien emuluj±cy interfejs Pan 9 (8-1/2)
 Name:		9wm
 Version:	1.2
 Release:	1
 Copyright:	Distributable 
 Group:		X11/Window Managers
+Group(de):	X11/Fenstermanager
 Group(es):	X11/Administraadores De Ventanas
 Group(fr):	X11/Gestionnaires De Fenêtres
 Group(pl):	X11/Zarz±dcy Okien
@@ -12,8 +13,8 @@ Source0:	ftp://ftp.cs.su.oz.au/dhog/9wm/pre-%{name}-%{version}.shar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:	XFree86-devel
 
-%define _prefix /usr/X11R6
-%define _mandir %{_prefix}/man
+%define		_prefix		/usr/X11R6
+%define		_mandir		%{_prefix}/man
 
 %description
 9wm emulates the Plan 9 window manager 8-1/2. 9wm is designed to be
@@ -31,14 +32,13 @@ zcat %{SOURCE0} | sh
 
 %build
 xmkmf -a
-%{__make} CDEBUGFLAGS="$RPM_OPT_FLAGS"
+%{__make} CDEBUGFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} install install.man DESTDIR=$RPM_BUILD_ROOT
-strip $RPM_BUILD_ROOT%{_bindir}/9wm
 
-gzip -9nf README $RPM_BUILD_ROOT/%{_mandir}/man1/*
+gzip -9nf README
 
 %clean 
 rm -rf $RPM_BUILD_ROOT
