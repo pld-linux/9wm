@@ -1,5 +1,5 @@
 Summary:	An X window manager resembling the Plan 9 (8-1/2) interface
-Summary(pl):	Zarz±dca okien emuluj±cy interfejs Plan 9 (8-1/2)
+Summary(pl.UTF-8):   ZarzÄ…dca okien emulujÄ…cy interfejs Plan 9 (8-1/2)
 Name:		9wm
 Version:	1.2
 Release:	5
@@ -20,9 +20,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 small and fast. The interface is easy to use, icon-less and
 click-to-type.
 
-%description -l pl
-9wm emuluje zarz±dcê okien 8-1/2 z Plan 9. 9wm zosta³ zaprojektowany
-tak, aby by³ ma³y i szybki. Interfejs jest ³atwy w u¿yciu i pozbawiony
+%description -l pl.UTF-8
+9wm emuluje zarzÄ…dcÄ™ okien 8-1/2 z Plan 9. 9wm zostaÅ‚ zaprojektowany
+tak, aby byÅ‚ maÅ‚y i szybki. Interfejs jest Å‚atwy w uÅ¼yciu i pozbawiony
 ikon.
 
 %prep
