@@ -9,7 +9,7 @@ Source0:	http://www.plig.org/xwinman/archive/9wm/pre-%{name}-%{version}.shar.gz
 # Source0-md5:	2785a33d4f42ecc19234029db03d7e00
 Source1:	%{name}.desktop
 Source2:	%{name}-xsession.desktop
-BuildRequires:	XFree86-devel
+BuildRequires:	xorg-lib-libXext-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_wmpropsdir	/usr/share/wm-properties
