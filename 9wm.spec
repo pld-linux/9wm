@@ -9,7 +9,9 @@ Source0:	http://www.plig.org/xwinman/archive/9wm/pre-%{name}-%{version}.shar.gz
 # Source0-md5:	2785a33d4f42ecc19234029db03d7e00
 Source1:	%{name}.desktop
 Source2:	%{name}-xsession.desktop
+BuildRequires:	xorg-cf-files
 BuildRequires:	xorg-lib-libXext-devel
+BuildRequires:	xorg-util-imake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_wmpropsdir	/usr/share/wm-properties
@@ -32,14 +34,14 @@ zcat %{SOURCE0} | sh
 %build
 xmkmf -a
 %{__make} \
+	CC="%{__cc}" \
 	CDEBUGFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT{%{_wmpropsdir},%{_xsessdir}}
 install -d $RPM_BUILD_ROOT%{_bindir}
-install -d $RPM_BUILD_ROOT%{_mandir}/man1/
+install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
 install 9wm $RPM_BUILD_ROOT%{_bindir}
 install 9wm.man $RPM_BUILD_ROOT%{_mandir}/man1/9wm.1x
@@ -54,6 +56,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README
 %attr(755,root,root) %{_bindir}/9wm
-%{_mandir}/*/*
-%{_wmpropsdir}/*
+%{_mandir}/man1/9wm.1x*
+%{_wmpropsdir}/%{name}.desktop
 %{_xsessdir}/%{name}.desktop
