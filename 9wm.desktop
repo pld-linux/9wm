@@ -3,8 +3,9 @@ Name=9wm
 Comment=Very small and fast window manger
 Comment[pl]=Mały i szybki zarządca okien
 Exec=9wm
-Terminal=False
+Terminal=false
 TryExec=9wm
+
 [Window Manager]
 SessionManaged=9wm
 # vi: encoding=utf-8
