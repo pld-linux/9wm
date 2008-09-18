@@ -2,7 +2,7 @@ Summary:	An X window manager resembling the Plan 9 (8-1/2) interface
 Summary(pl.UTF-8):	Zarządca okien emulujący interfejs Plan 9 (8-1/2)
 Name:		9wm
 Version:	1.2
-Release:	5
+Release:	6
 License:	distributable
 Group:		X11/Window Managers
 Source0:	http://www.plig.org/xwinman/archive/9wm/pre-%{name}-%{version}.shar.gz
@@ -14,7 +14,7 @@ BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-util-imake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_wmpropsdir	/usr/share/wm-properties
+%define		_wmpropsdir	/usr/share/gnome/wm-properties
 %define		_xsessdir	/usr/share/xsessions
 
 %description
