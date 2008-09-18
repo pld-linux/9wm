@@ -12,6 +12,7 @@ Source2:	%{name}-xsession.desktop
 BuildRequires:	xorg-cf-files
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-util-imake
+Conflicts:	filesystem < 3.0-20
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_wmpropsdir	/usr/share/gnome/wm-properties
