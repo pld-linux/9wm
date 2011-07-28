@@ -1,8 +1,12 @@
+#
+# Conditional build:
+%bcond_with	gnome2		# build with support for GNOME2 wm-properties
+#
 Summary:	An X window manager resembling the Plan 9 (8-1/2) interface
 Summary(pl.UTF-8):	Zarządca okien emulujący interfejs Plan 9 (8-1/2)
 Name:		9wm
 Version:	1.2
-Release:	6
+Release:	7
 License:	distributable
 Group:		X11/Window Managers
 Source0:	http://www.plig.org/xwinman/archive/9wm/pre-%{name}-%{version}.shar.gz
@@ -47,7 +51,7 @@ install -d $RPM_BUILD_ROOT%{_mandir}/man1
 install 9wm $RPM_BUILD_ROOT%{_bindir}
 install 9wm.man $RPM_BUILD_ROOT%{_mandir}/man1/9wm.1x
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_wmpropsdir}
+i%{?with_gnome2:nstall %{SOURCE1} $RPM_BUILD_ROOT%{_wmpropsdir}}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_xsessdir}/%{name}.desktop
 
 %clean
@@ -58,5 +62,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %attr(755,root,root) %{_bindir}/9wm
 %{_mandir}/man1/9wm.1x*
-%{_wmpropsdir}/%{name}.desktop
+%{?with_gnome2:%{_wmpropsdir}/%{name}.desktop}
 %{_xsessdir}/%{name}.desktop
